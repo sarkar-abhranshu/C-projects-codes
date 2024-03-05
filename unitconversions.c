@@ -18,27 +18,29 @@ void inch_to_m(float inch){
 
 int main()
 {
-    int a;
+    char a;
     float b;
-    printf("Enter 1 for kilometre to mile, 2 for inches to feet, 3 for centimetres to inches, 4 for pound to kgs, 5 for inches to metres\n");
-    scanf("%d", &a);
-    printf("Enter the value:\n");
-    scanf("%f", &b);
-    switch (a)
-    {
-    case 1: km_to_miles(b);
+    while (1){
+        printf("Enter 1 for kilometre to mile, 2 for inches to feet, 3 for centimetres to inches, 4 for pound to kgs, 5 for inches to metres. Enter q to quit.\n");
+        scanf("%c", &a);
+        printf("Enter the value:\n");
+        scanf("%f", &b);
+    switch (a){
+    case '1': km_to_miles(b);
             break;
-    case 2: inch_to_feet(b);
+    case '2': inch_to_feet(b);
             break;
-    case 3: cm_to_inch(b);
+    case '3': cm_to_inch(b);
             break;
-    case 4: p_to_kg(b);
+    case '4': p_to_kg(b);
             break;
-    case 5: inch_to_m(b);
+    case '5': inch_to_m(b);
             break;
-    default:
-        printf("Give proper input\n");
-        break;
+    case 'q': printf("Quitting...");
+                goto end;
+                break;
+    }
+    end:
     }
     return 0;
 }
