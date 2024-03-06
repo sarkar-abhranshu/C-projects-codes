@@ -1,46 +1,44 @@
 #include <stdio.h>
 
-void km_to_miles(float km){
-    printf("Value in kilometers is %f and miles is %f", km, km*1.6);
-}
-void inch_to_feet(float inch){
-        printf("Value in inches is %f and feet is %f", inch, inch/12);
-}
-void cm_to_inch(float cm){
-        printf("Value in centimeters is %f and inch is %f", cm, cm*0.393701);
-}
-void p_to_kg(float p){
-        printf("Value in pounds is %f and kilograms is %f", p, p/2.20462);
-}
-void inch_to_m(float inch){
-        printf("Value in inches is %f and metres is %f", inch, inch*0.0254);
-}
-
 int main()
 {
     char a;
     float b;
     while (1){
         printf("Enter 1 for kilometre to mile, 2 for inches to feet, 3 for centimetres to inches, 4 for pound to kgs, 5 for inches to metres. Enter q to quit.\n");
-        scanf("%c", &a);
-        printf("Enter the value:\n");
-        scanf("%f", &b);
-    switch (a){
-    case '1': km_to_miles(b);
-            break;
-    case '2': inch_to_feet(b);
-            break;
-    case '3': cm_to_inch(b);
-            break;
-    case '4': p_to_kg(b);
-            break;
-    case '5': inch_to_m(b);
-            break;
-    case 'q': printf("Quitting...");
+        scanf(" %c", &a);
+        switch (a){
+        case '1':
+                printf("Enter the value:\n");
+                scanf("%f", &b);
+                printf("Value in kilometers is %.2f and miles is %.2f\n", b, b*1.6);
+                break;
+        case '2': 
+                printf("Enter the value:\n");
+                scanf("%f", &b);
+                printf("Value in inches is %.2f and feet is %.2f\n", b, b/12);
+                break;
+        case '3': 
+                printf("Enter the value:\n");
+                scanf("%f", &b);
+                printf("Value in centimeters is %.2f and inch is %.2f\n", b, b*0.393701);
+                break;
+        case '4': 
+                printf("Enter the value:\n");
+                scanf("%f", &b);
+                printf("Value in pounds is %.2f and kilograms is %.2f\n", b, b/2.20462);
+                break;
+        case '5': 
+                printf("Enter the value:\n");
+                scanf("%f", &b);
+                printf("Value in inches is %.2f and metres is %.2f\n", b, b*0.0254);
+                break;
+        case 'q': 
+                printf("Quitting...");
                 goto end;
                 break;
+        }
     }
     end:
-    }
     return 0;
 }
